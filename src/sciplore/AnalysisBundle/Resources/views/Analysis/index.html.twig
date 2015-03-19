@@ -1,0 +1,67 @@
+{% extends '::base-clean.html.twig' %}
+
+{% block stylesheets%}
+    {{ parent() }}
+    
+    <link rel="stylesheet" href="{{ asset('bundles/sciploreanalysis/css/analysis.css') }}" type="text/css" media="screen" />
+
+ {%endblock%}
+    
+{% block javascripts %}
+  {{ parent() }}
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="{{ asset('bundles/sciploreanalysis/js/charts_mapper.js') }}"></script>
+    <script src="{{ asset('bundles/sciploreanalysis/js/analysis.js') }}"></script>
+{% endblock %}
+
+{% block heading %} Summary of Results {% endblock %}
+{% block content%}
+    <div id="experiment_description">
+        The following two diagrams depict the percentage of times the respective similarity measures generated the best recommendation.
+        The left diagram shows the results of all users for the selected experiment, while the right diagram considers only your relevance judgments.
+        Note that multiple similarity measures may recommend the same document. 
+    </div>
+    
+
+
+    <div id="chart-container">
+        <div class="chart">
+            <h2>Results of All Users</h2>
+            <div id="chart_div_all"></div>
+            <div id="chart_div_all_table"></div>
+        </div>
+        
+        <div class="chart">
+            <h2>Your Results</h2>    
+            <div id="chart_div_user"></div>
+            <div id="chart_div_user_table"></div>
+        </div>
+    </div>
+
+ 
+
+    <div id="experiment_selection">
+    <label for="experiment">Select Experiment</label>&nbsp;
+    <select name="epxeriment" id="experiment" autofocus="autofocus">
+        {% for e in experiments %}
+            {% include 'sciploreAnalysisBundle:Analysis:project_option.html.twig' with {'e': e, 'sel_exp' : sel_exp} %}
+        {% endfor %}
+    </select>&nbsp;
+    <button type="button" id="form_reload">Reload</button> 
+    </div>
+{% endblock %}
+
+{% block content_footer %}
+    <div class="flow">
+        <a href="{{path('experiment_index')}}">Begin a new experiment</a>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a href="{{ path('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{path('login')}}">Login</a>
+        {% endif %}
+    </div>
+{% endblock %}
+
+    {% block layout_footer %}{% endblock %}
+
+

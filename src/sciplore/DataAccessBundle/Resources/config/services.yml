@@ -1,0 +1,22 @@
+services:
+ sciplore.document_manager:
+    class: sciplore\DataAccessBundle\Services\DocumentAccessService
+    arguments: [@doctrine.orm.entity_manager]
+ sciplore.experiment_manager:
+    class: sciplore\DataAccessBundle\Services\ExperimentAccessService
+    arguments: [@doctrine.orm.entity_manager]
+ sciplore.rec_manager:
+    class: sciplore\DataAccessBundle\Services\RecommendationAccessService
+    arguments: [@doctrine.orm.entity_manager]
+ sciplore.user_manager:
+    class: sciplore\DataAccessBundle\Services\UserAccessService
+    arguments: [@doctrine.orm.entity_manager]
+ sciplore.method_manager:
+    class: sciplore\DataAccessBundle\Services\MethodAccessService
+    arguments: [@doctrine.orm.entity_manager]
+ sciplore.analysis_manager:
+    class: sciplore\DataAccessBundle\Services\AnalysisAccessService
+    arguments: [@doctrine.orm.entity_manager]
+ sciplore.options:
+    class: sciplore\DataAccessBundle\Services\OptionsService
+    arguments: [@service_container]

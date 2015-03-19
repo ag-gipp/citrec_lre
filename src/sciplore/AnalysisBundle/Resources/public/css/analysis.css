@@ -1,0 +1,51 @@
+
+
+.chart {
+    display: inline-table;
+    width: 45%;
+    margin-top: 30px;
+}
+.chart h2{
+    margin: 0;
+}
+
+#chart-container{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: medium;
+}
+
+#experiment_selection{
+    display: table;
+    width:100%;
+}
+
+.analysis_table_cell{
+    text-align: center !important;
+}
+#content-footer {
+    clear: both;
+    padding-top: 15px;
+}
+#footer{
+    clear: both;
+}
+#experiment_description{
+    font-size: large;
+    text-align: justify;
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+    
+}
+
+
+
+#chart-container + *{
+    clear: both;
+}
+#options h2{
+    display: inline-block;
+    margin-right: 10px;
+}

@@ -1,0 +1,3 @@
+sciploreFlowManagementBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: sciploreFlowManagementBundle:Default:index }

@@ -1,0 +1,79 @@
+{# src/Acme/BlogBundle/Resources/views/Blog/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets%}
+    {{ parent() }}
+    <link type="text/css" href=" {{ asset('css/smoothness/jquery-ui-1.8.21.custom.css') }}" rel="stylesheet" />
+ {%endblock%}
+
+          
+
+{% block javascripts %}
+  {{ parent() }}
+
+    {% if options["show_analysis"] %}
+
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    {% endif %}
+
+    <script src="{{ asset('bundles/sciploreanalysis/js/charts_mapper.js') }}"></script>
+    <script src="{{ asset('bundles/sciploreui/js/recommendation.js') }}"></script> 
+
+
+{% endblock %}
+
+    
+    
+    
+{% block title %}{{ parent() }}: Recommendations for:{{ref_doc.getTitle()}}{% endblock %}
+
+{% block left_heading %} Reference Document {% endblock %}
+
+{% block center_heading %} Recommended Documents {% endblock %}
+
+{% block left_content%}
+
+    {% include 'sciploreUIBundle:Document:show.html.twig' with {'doc': ref_doc, isRefDoc:true} %}
+
+{%endblock%}
+
+
+{% block chart_footer %}
+    Your relative distribution of points for every Similarity Measure for the current experiment.
+    <a href="{{path('analysis_start') }}" target="_blank">Details</a>
+  
+{% endblock %}
+
+{% block body_content %}
+    {% if errors is defined %}
+        {% for err in errors %}
+                <h1 class="error_msg">{{err}}</h1>
+        {% endfor %}
+    {% endif %}
+    <div id="recommendations">
+	<div class="inner">
+        <form action="{{ path('recommendation_scorring',{ 'id': ref_doc.id })}}" method="post">
+                {% block body_content_form %}
+                {% endblock %}
+                <div id="form-footer">
+                       <label for="confidence" class="form-confidence-cell">How confident are you about your answer? <br> Please rate on a scale from 1 (not confident at all) to 5 (very confident)!:  </label>
+                        <span class="form-confidence-cell">
+                        	<!--<input type="textbox" id="confidence" min="{{options["min_confidence"]}}" max="{{options["max_confidence"]}}" step="1" value="{{options["def_confidence"]}}" name="confidence"/>-->
+                                
+                                	<select id="confidence" name="confidence" value="{{options["def_confidence"]}}">
+                                        {% for i in range(options.min_confidence, options.max_confidence) %}
+                                                <option value="{{i}}">{{i}}</option>
+                                        {% endfor %}
+                                        </select>
+                        </span>
+                        <div>
+                                <input type="submit" id="submit-button" value="Submit rating" class="form-color"/>
+                        </div>
+                </div>
+	</form>     
+	</div>
+    </div>
+<span id="show_analysis">{{options["show_analysis"]}}</span>
+
+{% endblock %}

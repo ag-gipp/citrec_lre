@@ -1,0 +1,6 @@
+services:
+ sciplore.document_manager:
+    class: sciplore\UserManagementBundle\Handler\RedirectHandler
+    arguments:  [@router, @security.context,   @session]
+    tags:
+      - { name: kernel.event_listener, event: security.interactive_login }

@@ -1,0 +1,73 @@
+security:
+    encoders:
+        sciplore\DataAccessBundle\Entity\User: plaintext
+    providers:
+        chain_provider:
+            providers: [in_memory, user_db]
+        in_memory:
+            users:
+                chris: { password: sciplore, roles: 'ROLE_ADMIN' }
+        user_db:
+            entity: { class: sciplore\DataAccessBundle\Entity\User, property: name }
+
+#    firewalls:
+#          pattern:    ^/login$
+#          access_control:
+#            - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#            - { path: ^/recommendation/*, roles: ROLE_USER }
+#          secured_area:
+#              form_login: ~
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+#        login:
+#            pattern:  ^/login$
+#            security: false
+
+        main:
+            pattern:    /.*
+            anonymous:       true
+            form_login:
+                check_path: /evaluation/login_check
+                login_path: /login
+            logout:
+                path:   /evaluation/logout
+                target: /     
+                    
+#    firewalls:
+#        dev:
+#            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+#            security: false
+#
+##        login:
+##            pat~tern:  ~^/login$
+##            security: false
+##        login_management:
+##          pattern: ^/login_check$~
+##          pattern: ^/logout$~
+##          form_login: 
+#        secured_area:
+#            pattern: ^/
+#            anonymous: ~
+#            form_login:
+#                login_path:  /login/login
+#                check_path:  /login/login_check
+#            logout:
+#                path:   /login/logout
+#                target: /
+
+            #anonymous: ~
+            #http_basic:
+            #    realm: "Secured Demo Area"
+
+    access_control:
+#        - { path: ^/login_check, roles: ROLE_USER }
+#        - { path: ^/logout, roles: ROLE_USER }
+        - { path: ^/evaluation/.*, roles: ROLE_USER }
+        - { path: /.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/auto_login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+

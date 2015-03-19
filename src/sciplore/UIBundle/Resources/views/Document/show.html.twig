@@ -1,0 +1,31 @@
+
+<div class="article">
+<h2>{{doc.title}}</h2>
+<a href="{{doc.getPMCUrl()}}" target="_blank">Link to Fulltext</a>
+<p class="abstract">{{doc.getAbstractText()}}</p>
+
+{% if not isRefDoc is defined %}
+	
+	<div class="evalform">
+	{% if options.result_type == 'nominal' %}
+		<span>
+			<input type="radio" class="select_radio" name="selected_doc" value="{{doc.getId()}}" {% if doc.getId()==selection %}checked="true"{% endif %} /> This is the best recommendation
+		</span>
+	{% endif %}
+	{% if options.result_type == 'ordinal' %}
+		<span>
+		<input type="hidden" class="document_id" value="{{doc.getId()}}" />
+		<select name="{{options.points_selection_prefix}}{{rec.getRecId()}}">
+		
+		{% for value, label in options.levels %}
+
+			<option value="{{value}}">{{label}}</option>
+		{% endfor %}
+		</select>
+		Please rank the quality of this recommendation</span>
+	{% endif %}
+
+	</div>
+
+{% endif %}
+</div>

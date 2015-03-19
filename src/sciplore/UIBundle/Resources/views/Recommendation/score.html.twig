@@ -1,0 +1,18 @@
+{% extends 'sciploreUIBundle:Evaluation:evaluationBase.html.twig' %}
+
+
+{% block stylesheets%}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/sciploreui/css/recommendations.css') }}" type="text/css" media="screen" />
+
+ {%endblock%}
+
+    
+    
+    
+    
+{% block title %}{{ parent() }}: Thanks for scorring{% endblock %}
+{% block body %}
+<h1>{{message}}</h1>
+
+{% endblock %}

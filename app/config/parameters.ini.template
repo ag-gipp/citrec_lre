@@ -1,0 +1,21 @@
+; These parameters can be imported into other config files
+; by enclosing the key with % (like %database_user%)
+; Comments start with ';', as in php.ini
+[parameters]
+    database_driver   = pdo_mysql
+    ;database_driver= mysql
+    database_host     = localhost
+    database_port     =
+    database_name     = lre
+    database_user     = lre
+    database_password = secure
+
+
+    mailer_transport  = smtp
+    mailer_host       = localhost
+    mailer_user       =
+    mailer_password   =
+
+    locale            = en
+;change secret manually after every update
+    secret            = 29091687c295b6f4744619e8cbf792ea

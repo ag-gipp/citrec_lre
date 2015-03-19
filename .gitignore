@@ -1,0 +1,40 @@
+#ignoring Komodo Edit Project File
+recommender_eval.komodoproject
+config.yml
+# /
+/js
+/output.sql
+
+# /app/
+/app/cache
+/app/logs
+
+# /nbproject/
+/nbproject/private
+
+# /src/
+/src/Acme
+
+
+# /vendor/
+/vendor/*
+
+# /web/
+/web/bundles
+
+#SVN Files
+*.svn
+
+.DS_Store
+
+#Ignoring merge resolves
+*.orig
+
+*.php~
+
+app/config/parameters.ini
+.rsync_cache/
+
+".htaccess"
+src/sciplore/CSVImportBundle/*
+#ignoring further changes of config.yml

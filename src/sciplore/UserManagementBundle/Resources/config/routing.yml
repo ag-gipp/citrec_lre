@@ -1,0 +1,11 @@
+login:
+    pattern:   /login
+    defaults:  { _controller: sciploreUserManagementBundle:User:login }
+login_check:
+    pattern:   /evaluation/login_check
+logout:
+    pattern:   /evaluation/logout
+    
+auto_login:
+    pattern:  /auto_login
+    defaults:  { _controller: sciploreUserManagementBundle:AutoLogin:login }

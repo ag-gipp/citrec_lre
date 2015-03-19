@@ -1,0 +1,7 @@
+{% extends 'sciploreUIBundle:Recommendation:show.html.twig' %}
+
+                        {% block body_content_form %}
+			   
+				{% include 'sciploreUIBundle:Document:show_list.html.twig' with {'recommendations': recommendations,  "options" : options} %}
+
+                        {% endblock %}

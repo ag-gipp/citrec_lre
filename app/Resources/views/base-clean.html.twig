@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% block title %}Recommender Evaluation{% endblock %}</title>
+		{% block stylesheets %}
+			<link type="text/css" href=" {{ asset('css/smoothness/jquery-ui-1.8.21.custom.css') }}" rel="stylesheet" />
+			<link rel="stylesheet" href="{{ asset('css/lre.css') }}" type="text/css" media="screen" />
+		{% endblock %}
+		
+		{% block javascripts %}
+			<script src="{{ asset('js/jquery.js') }}"></script>
+			<!-- I use a customized version of jquery-ui. If you use more than the Progressbar you have to build your own version.
+			     Version Builder Tool: http://jqueryui.com/download
+			-->
+			<script src="{{ asset('js/jquery-ui-custom.min.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body class="clean">
+		{% include '::nav.html.twig' %}
+		<h1>Sciplore Literature Recommendation Evaluator</h1>
+		{%if block('heading')|length > 0 %}<h2>{% block heading %}{% endblock %}</h2>{% endif %}
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+		<div id="footer">
+			{% block content_footer %}{% endblock %}
+		</div>
+	</body>
+</html>

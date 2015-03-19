@@ -1,0 +1,15 @@
+{% extends 'sciploreUIBundle:Recommendation:show.html.twig' %}
+
+    {% block body_content_form %}
+	{% include 'sciploreUIBundle:Document:show_list.html.twig'with {'recommendations': recommendations,  'selection': sel_doc_id, "options" : options}  %}
+	    
+	    <div id="non_rec" class="form-radio">
+		<span>
+			<div class="evalform"><span><input type="radio" class="select_radio" name="selected_doc" value="0"
+			{% if sel_doc_id==0 %}checked="true" {% endif %}/>
+			No recommendation fulfills the specified criteria.
+			</span></div>
+		</span>
+	    </div>
+
+    {% endblock %}

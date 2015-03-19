@@ -1,0 +1,48 @@
+#document_index:
+#    pattern:  /documents
+#    defaults: { _controller: sciploreUIBundle:Default:index }
+document_show:
+    pattern: /document/{id}
+    defaults: { _controller: sciploreUIBundle:Document:show }
+
+start_page:
+    pattern: /
+    defaults: { _controller: sciploreUIBundle:Starter:index }
+
+finished:
+    pattern: /evaluation/finished
+    defaults: { _controller: sciploreUIBundle:Starter:finished }
+    
+_recommendation_graph_data:
+    pattern: /evaluation/recommendation/current_data
+    defaults: { _controller: sciploreUIBundle:Recommendation:currentGraphData }
+
+_recommendation_graph_options:
+    pattern: /evaluation/recommendation/current_options
+    defaults: { _controller: sciploreUIBundle:Recommendation:currentGraphOptions }
+
+recommendation_single_view:
+    pattern: /evaluation/recommendation/{id}
+    defaults: { _controller: sciploreUIBundle:Recommendation:show }
+
+recommendation_scorring:
+    pattern: /evaluation/recommendation/{id}/score
+    defaults: { _controller: sciploreUIBundle:Recommendation:score }
+
+_progressbar:
+    pattern: /evaluation/experiment/progress
+    defaults: { _controller: sciploreUIBundle:Experiment:progress }
+user_login:
+    pattern: /evaluation/login
+    defaults: { _controller: sciploreUIBundle:User:login }
+
+experiment_selection:
+    pattern: /evaluation/experiment/{id}
+    defaults: { _controller: sciploreUIBundle:Experiment:selection }
+    
+experiment_index:
+    pattern: /evaluation/experiment
+    defaults: { _controller: sciploreUIBundle:Experiment:index }
+experiment_reset:
+    pattern: /evaluation/experiment/reset/{id}
+    defaults: { _controller: sciploreUIBundle:Experiment:reset }

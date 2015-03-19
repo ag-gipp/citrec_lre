@@ -1,0 +1,45 @@
+
+.form-confidence-cell{
+    display: inline;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.form-color{
+        background-color: #A3CAF9;
+        font-size: x-large;
+}
+#submit-button{
+    font-size: large;
+}
+.form-highlight{
+    font-size: x-large;
+}
+.form-footer{
+    font-size: x-large;
+    padding: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+#slider-container{
+        float:right;
+
+}
+.selector{
+    width: 100px;
+    border: 1px solid;
+}
+
+
+
+.article-highlight{
+    background-color: rgba(252, 228, 109, 0.5);
+
+}
+.ui-progressbar { position:relative; }
+.pblabel { width: 100%; text-align: center; line-height: 20px; left:0}
+    
+    
+
+

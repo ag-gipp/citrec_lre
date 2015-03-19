@@ -1,0 +1,8 @@
+
+#    sciplore_validation.example.class: sciplore\ValidationBundle\Example
+parameters:
+
+services:
+ sciplore.recommendation_validation:
+    class: sciplore\ValidationBundle\Services\RecommendationValidationService
+    arguments: [@sciplore.method_manager]

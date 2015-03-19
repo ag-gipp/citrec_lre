@@ -1,0 +1,7 @@
+parameters:
+#    sciplore_flow_management.example.class: sciplore\FlowManagementBundle\Example
+
+services:
+    sciplore.flow_manager:
+        class: sciplore\FlowManagementBundle\Services\FlowManagementService
+        arguments: [@session]

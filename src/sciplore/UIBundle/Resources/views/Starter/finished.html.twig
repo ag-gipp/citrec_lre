@@ -1,0 +1,10 @@
+{% extends '::base-clean.html.twig' %}
+
+{% block heading %}<span class="more-space-before">You have completed the evaluation. <br /> Thank you for your time!</span>{% endblock %}
+{% block content %}
+
+<h2 class="inline-link"><a href="{{path('experiment_index')}}">Begin a new experiment</a></h2>
+<h2 class="inline-link"><a href="{{path('analysis_start') }}" target="_blank">Go to report summary</a></h2>
+<h2 class="inline-link"><a href="{{path('logout')}}">Logout</a></h2>
+
+{% endblock %}

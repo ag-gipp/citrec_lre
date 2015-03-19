@@ -1,0 +1,6 @@
+
+{% for rec in recommendations %}
+    {% include 'sciploreUIBundle:Document:show.html.twig' with {'rec': rec, 'doc': rec.getRecommendedDocument(),  "options" : options} %}
+{% else %}
+    <div class="Error">No Document found</div>
+{% endfor %}

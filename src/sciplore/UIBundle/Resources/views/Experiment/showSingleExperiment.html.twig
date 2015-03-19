@@ -1,0 +1,14 @@
+<div class="experiment">
+	<div class="experiment-header">
+	<span class="experiment-title"><a href="{{path('experiment_selection',{ 'id': e.id }) }}"><h3>{{ e.getName() }}</h3></a></span>
+
+	</div>
+	<div class="description">{{e.getDescription()}}</div>
+	{% if e.getDebugView() %}
+	<div class="experiment-reset">
+		<form class="delete_results" action="{{ path('experiment_reset',{ 'id': e.id })}}" method="post">
+			<button class="btn_experiment_reset">Reset current results</button>
+		</form>
+	</div>
+        {% endif %}
+</div>

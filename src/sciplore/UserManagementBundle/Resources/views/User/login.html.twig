@@ -1,0 +1,27 @@
+{% extends '::base-clean.html.twig' %}
+{% block title %}{{ parent() }}: Authentification{% endblock %}
+
+{% block heading %}Login{% endblock %}
+{% block content %}
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+<div>Please select a Username. No Password is required.</div>
+<div>
+    <form action="{{ path('login_check') }}" method="post">
+        <div class="form-content">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="_username" value="{{ last_username }}" autofocus required placeholder="Please enter your username"/>
+    
+        {% if options.authentifiaction_requires_password == 1 %}
+             <label for="password">Password:</label>
+            <input type="password" id="password" name="_password" placeholder="Please enter your password"  value=""/>
+        {% else %}    
+            <input type="hidden" id="password" name="_password" placeholder="Please enter your password"  value="WnDadvfhWqoJnHuXtyxwZxGbfHsXrNwI3Idns4d2Ie9BnEjYnr14ijyCr0YPg7i"/> 
+        {% endif %}
+        
+        <div><button type="submit">login</button></div>
+        </div>
+    </form>
+</div>
+{% endblock %}

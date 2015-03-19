@@ -1,0 +1,14 @@
+analysis_start:
+    pattern:  /analysis
+    defaults: { _controller: sciploreAnalysisBundle:Analysis:index }
+
+analysis_project:
+    pattern:  /analysis/experiment/{experiment_id}
+    defaults: { _controller: sciploreAnalysisBundle:Analysis:Experiment }
+
+analysis_user_and_project:
+    pattern:  /analysis/experiment/{experiment_id}/for_current_user
+    defaults: { _controller: sciploreAnalysisBundle:Analysis:userExperiment }
+options:
+    pattern:  /analysis/options/{experiment_id}
+    defaults: { _controller: sciploreAnalysisBundle:Analysis:options }

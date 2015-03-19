@@ -1,0 +1,10 @@
+SET foreign_key_checks=0;
+DROP TABLE IF EXISTS `abstract`;
+DROP TABLE IF EXISTS `document`;
+DROP TABLE IF EXISTS `document_aux`;
+DROP TABLE IF EXISTS `experiment`;
+DROP TABLE IF EXISTS `experiment_task`;
+DROP TABLE IF EXISTS `method`;
+DROP TABLE IF EXISTS `result`;
+DROP TABLE IF EXISTS `user`;
+DROP VIEW IF EXISTS document_gui;

@@ -1,0 +1,33 @@
+
+
+.experiment-title{
+    font-size: larger;
+    font-weight: bold;
+    font-color: green;
+    font-family: Arial,Helvetica,sans-serif;
+    margin: 2px;
+    marign-top:2em;
+}
+.article_title{
+    font-size: 16px;
+    padding:0;
+    margin:0;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+}
+.article_abstract{
+    text-align: justify ;
+    text-size: 12px;
+    font-family: serif;
+    margin:0;
+    padding:0;
+    margin-bottom: 2px;
+}
+article{
+    margin-bottom: 30px;
+
+}
+#form-footer{
+    border-top: 1px solid black;
+    padding-top: 10px;
+}

@@ -1,0 +1,16 @@
+{% extends '::base-clean.html.twig' %}
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('bundles/sciploreui/js/experiment.js') }}"></script> 
+{% endblock %}
+{% block heading %}List of Experiments{% endblock %}
+
+{% block content %}
+    <div id="experiments">
+        {% for e in experiments %}
+            {% include 'sciploreUIBundle:Experiment:showSingleExperiment.html.twig' with {'e': e} %}
+        {% else %}
+            <div class="Error">No Experiments found</div>
+        {% endfor %}
+    </div>
+{% endblock %}

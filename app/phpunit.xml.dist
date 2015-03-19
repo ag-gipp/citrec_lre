@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+    backupGlobals               = "false"
+    backupStaticAttributes      = "false"
+    colors                      = "true"
+    convertErrorsToExceptions   = "true"
+    convertNoticesToExceptions  = "true"
+    convertWarningsToExceptions = "true"
+    processIsolation            = "false"
+    stopOnFailure               = "false"
+    syntaxCheck                 = "false"
+    bootstrap                   = "bootstrap.php.cache" >
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>../src/*/*Bundle/Tests</directory>
+            <directory>../src/*/Bundle/*Bundle/Tests</directory>
+        </testsuite>
+    </testsuites>
+
+ <!--   
+    <php>
+        <server name="KERNEL_DIR" value="/Library/WebServer/Documents/recommender_eval/app/" />
+    </php>
+ -->   
+
+    <filter>
+        <whitelist>
+            <directory>../src</directory>
+            <exclude>
+                <directory>../src/*/*Bundle/Resources</directory>
+                <directory>../src/*/*Bundle/Tests</directory>
+                <directory>../src/*/Bundle/*Bundle/Resources</directory>
+                <directory>../src/*/Bundle/*Bundle/Tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+<!--    <logging>
+    <log type="coverage-html" target="../cc_report/" charset="UTF-8"
+        yui="true" highlight="false"
+        lowUpperBound="35" highLowerBound="70" />
+    <log type="coverage-xml" target="/tmp/coverage.xml"/>
+    <log type="json" target="/tmp/logfile.json"/>
+    <log type="tap" target="/tmp/logfile.tap"/>
+    <log type="junit" target="/tmp/logfile.xml" logIncompleteSkipped="false"/>
+    <log type="testdox-html" target="/tmp/testdox.html"/>
+    <log type="testdox-text" target="/tmp/testdox.txt"/>
+    </logging>-->
+
+</phpunit>

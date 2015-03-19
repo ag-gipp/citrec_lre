@@ -1,0 +1,7 @@
+parameters:
+#    sciplore_analysis.example.class: sciplore\AnalysisBundle\Example
+
+services:
+#    sciplore_analysis.example:
+#        class: %sciplore_analysis.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

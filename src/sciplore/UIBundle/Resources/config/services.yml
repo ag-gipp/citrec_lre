@@ -1,0 +1,5 @@
+services:
+ sciplore.twig_extension:
+   class: sciplore\UIBundle\Twig\sciploreExtension
+   tags:
+      - { name: twig.extension }
